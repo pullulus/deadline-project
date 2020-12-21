@@ -2,6 +2,7 @@ package ru.netology.web.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 import ru.netology.web.data.DataHelper;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -30,7 +31,7 @@ public class LoginPage {
     }
 
     public LoginPage clearFieldAndPutInvalidPassword(DataHelper.AuthInfo other) {
-        passwordField.doubleClick();
+        passwordField.doubleClick().sendKeys(Keys.BACK_SPACE);
         passwordField.setValue(other.getPassword());
         loginButton.click();
         errorMessage.shouldBe(Condition.visible);

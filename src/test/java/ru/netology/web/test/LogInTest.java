@@ -19,7 +19,7 @@ public class LogInTest {
 
     @AfterAll
     static void shouldClearAll() {
-        Request.shouldDelete();
+      Request.shouldDelete();
     }
 
     @Test
